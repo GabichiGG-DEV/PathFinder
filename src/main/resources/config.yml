@@ -4,7 +4,7 @@
 
 # Waypoint Settings
 waypoints:
-  # Maximum number of waypoints per route (1-100)
+  # Maximum number of waypoints per route
   max_waypoints: 30
 
 # Particle Settings
