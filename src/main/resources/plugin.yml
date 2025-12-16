@@ -1,0 +1,84 @@
+name: PathFinder
+version: '1.0'
+main: me.gabichigg.pathfinder.PathfinderGPS
+api-version: '1.21'
+author: Gabichigg
+description: GPS system with particles for navigation in Minecraft
+
+commands:
+  pathfinder:
+    description: Main command for plugin management
+    usage: /<command> <reload|lang <language>>
+    permission: pathfinder.admin
+    aliases: [pf]
+
+  pathset:
+    description: Get the tool to mark the final destination
+    usage: /<command>
+    permission: pathfinder.set
+
+  pathcreate:
+    description: Create a destination with the marked position
+    usage: /<command> <name>
+    permission: pathfinder.create
+
+  pathways:
+    description: Manage waypoints to create and visualize routes
+    usage: /<command> create <destination> | undo | <destination> save <routeName> | <destination> view <routeName> | stop
+    permission: pathfinder.create
+
+  pathgo:
+    description: Start navigation to a destination with different modes
+    usage: /<command> <destination> [follow|nofollow|mix] [route] [player]
+    permission: pathfinder.use
+
+  pathstop:
+    description: Stop active navigation
+    usage: /<command>
+    permission: pathfinder.use
+
+  pathlist:
+    description: List all available destinations
+    usage: /<command>
+    permission: pathfinder.list
+
+  pathdelete:
+    description: Delete a destination and all its routes
+    usage: /<command> <name>
+    permission: pathfinder.delete
+
+permissions:
+  pathfinder.*:
+    description: Full access to the plugin
+    default: op
+    children:
+      pathfinder.set: true
+      pathfinder.create: true
+      pathfinder.use: true
+      pathfinder.list: true
+      pathfinder.delete: true
+      pathfinder.admin: true
+
+  pathfinder.set:
+    description: Allows obtaining the GPS tool
+    default: op
+
+  pathfinder.create:
+    description: Allows creating routes
+    default: op
+
+  pathfinder.use:
+    description: Allows using routes for navigation
+    default: true
+
+  pathfinder.list:
+    description: Allows viewing the route list
+    default: true
+
+  pathfinder.delete:
+    description: Allows deleting routes
+    default: op
+
+  pathfinder.admin:
+    description: Allows starting navigation for other players
+    default: op

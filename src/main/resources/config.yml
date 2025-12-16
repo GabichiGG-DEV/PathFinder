@@ -1,0 +1,69 @@
+# PathfinderGPS Configuration File
+# All particle names: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+# All sound names: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+
+# Waypoint Settings
+waypoints:
+  # Maximum number of waypoints per route (1-100)
+  max_waypoints: 30
+
+# Particle Settings
+particles:
+  # Particle for waypoint markers
+  # Note: Only DUST and DUST_COLOR_TRANSITION support custom colors
+  # Other particles (FLAME, HEART, VILLAGER_HAPPY, etc.) will use their default appearance
+  waypoint_particle: "DUST"
+
+  # Particle for lines during waypoint session
+  # Note: Only DUST and DUST_COLOR_TRANSITION support custom colors
+  session_line_particle: "DUST"
+
+  # Particle for navigation lines
+  # Note: Only DUST and DUST_COLOR_TRANSITION support custom colors
+  # Examples that DON'T support colors: FLAME, HEART, VILLAGER_HAPPY, ENCHANTED_HIT, etc.
+  navigation_line_particle: "DUST"
+
+  # Particle density (1-10, higher = more particles)
+  particle_density: 3
+
+# Sound Settings
+sounds:
+  # Sound when marking a waypoint
+  waypoint_sound: "BLOCK_NOTE_BLOCK_HARP"
+
+  # Sound volume (0.0-2.0)
+  waypoint_sound_volume: 1.0
+
+  # Sound pitch (0.5-2.0)
+  waypoint_sound_pitch: 1.0
+
+# Color Settings (RGB values 0-255)
+# Note: Colors only apply to DUST and DUST_COLOR_TRANSITION particles
+# If you use other particles, these color settings will be ignored
+colors:
+  distance_colors:
+    # Close distance color (default: red)
+    close: [255, 85, 85]
+
+    # Medium distance color (default: yellow)
+    medium: [255, 255, 85]
+
+    # Far distance color (default: green)
+    far: [85, 255, 85]
+
+    # Very far distance color (default: blue)
+    very_far: [85, 85, 255]
+
+# Distance Thresholds (in blocks)
+distances:
+  # Distance for "close" color (0-100)
+  close: 5.0
+
+  # Distance for "medium" color (0-100)
+  medium: 15.0
+
+  # Distance for "far" color (0-100)
+  far: 30.0
+
+# Default language (must match a file in languages folder)
+default_language: "en"

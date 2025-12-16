@@ -1,0 +1,105 @@
+# PathfinderGPS File Lingua Italiano
+# Usa & per i colori: &a = verde, &c = rosso, &e = giallo, &7 = grigio, ecc.
+# Segnaposto: {player}, {name}, {destination}, {route}, {count}, {max}, ecc.
+
+messages:
+  commands:
+    no_permission: "&cNon hai il permesso di usare questo comando."
+    player_only: "&cQuesto comando può essere usato solo dai giocatori."
+    player_not_found: "&cIl giocatore &e{player} &cnon è online."
+    invalid_usage: "&cUso errato. Usa: &e{usage}"
+
+  pathset:
+    tool_received: "&a&l✓ &aStrumento destinazione ricevuto!"
+    tool_usage: "&7Click destro per segnare la &edestinazione finale&7."
+    destination_marked: "&a&l✓ &aDestinazione finale segnata!"
+    coordinates: "&7Coordinate: &e{x}, {y}, {z}"
+    next_step: "&7Ora usa &e/pathcreate <nome> &7per creare la destinazione."
+
+  pathcreate:
+    usage: "&cUso: /pathcreate <nome>"
+    no_pending: "&cDevi prima segnare una destinazione con lo strumento."
+    tool_help: "&7Usa &e/pathset &7per ottenere lo strumento."
+    success: "&a&l✓ &aDestinazione &e{name} &acreato con successo!"
+    next_step: "&7Ora usa &e/pathways create {name} &7per creare i percorsi."
+    already_exists: "&cEsiste già una destinazione con questo nome."
+
+  pathways:
+    usage_create: "&cUso: /pathways create <destinazione>"
+    usage_save: "&cUso: /pathways <destinazione> save <nomePercorso>"
+    usage_view: "&cUso: /pathways <destinazione> view <nomePercorso>"
+    destination_not_found: "&cLa destinazione &e{name} &cnon esiste."
+    see_list: "&7Usa &e/pathlist &7per vedere le destinazioni disponibili."
+    tool_received: "&a&l✓ &aStrumento waypoint ricevuto!"
+    tool_usage: "&7Click destro per segnare waypoint (max {max})"
+    undo_help: "&7Annulla ultimo: &e/pathways undo"
+    save_help: "&7Salva con: &e/pathways {destination} save <nomePercorso>"
+    route_saved: "&a&l✓ &aPercorso &e{name} &asalvato con successo!"
+    now_navigate: "&7Ora puoi usare &e/pathgo {destination} [follow|nofollow|mix] [Percorso] [Giocatore]"
+    no_session: "&cNon hai una sessione waypoint attiva."
+    start_session: "&7Usa &e/pathways create <destinazione> &7per iniziarne una."
+    route_not_found: "&cIl percorso &e{route} &cnon esiste per la destinazione &e{destination}&c."
+    viewing_route: "&a&l✓ &aVisualizzando percorso: &e{name}"
+    waypoint_count: "&7Waypoint: &f{count}"
+    stop_viewing: "&7Usa &e/pathways stop &7per fermare la visualizzazione."
+    viewing_stopped: "&a&l✓ &aVisualizzazione fermata."
+    undo_no_waypoints: "&cNessun waypoint da annullare."
+    undo_success: "&c&l✗ &cWaypoint rimosso. &7Rimanenti: &f{count}"
+    undo_empty: "&7Non ci sono più waypoint nella sessione."
+
+  waypoint:
+    marked: "&a&l✓ &aWaypoint #{number} segnato! &7({remaining} rimanenti)"
+    limit_reached: "&cHai raggiunto il limite di {max} waypoint!"
+    limit_warning: "&7Solo &e{remaining} &7waypoint disponibili."
+    save_now: "&e&l⚠ &eLimite raggiunto! Salva il percorso ora:"
+    save_command: "&e/pathways {destination} save <nome>"
+
+  pathgo:
+    usage: "&cUso: /pathgo <destinazione> [follow|nofollow|mix] [percorso] [giocatore]"
+    no_admin_permission: "&cNon hai il permesso di avviare la navigazione per altri giocatori."
+    destination_not_found: "&cLa destinazione &e{name} &cnon esiste."
+    wrong_world: "&cQuesta destinazione si trova in un altro mondo."
+    no_route_found: "&cImpossibile trovare un percorso adatto."
+    route_not_found: "&cIl percorso &e{route} &cnon esiste per questa destinazione."
+    started: "&a&l✓ &aNavigazione avviata verso &e{destination}&a!"
+    route_selected: "&7Percorso selezionato: &b{route}"
+    route_waypoints: "&7Waypoint: &f{count}"
+    started_by: "&7Avviata da: &f{player}"
+    started_for: "&a&l✓ &aNavigazione avviata per &e{player} &averso &e{destination}&a!"
+    direct_mode: "&7Modalità: &eLinea diretta &7(senza percorso)"
+    nofollow_mode: "&7Modalità: &eLinea diretta &7(ignorando i percorsi)"
+    mix_mode: "&7Modalità: &eMista &7(diretta al primo waypoint di &b{route}&7)"
+    mix_waypoint_reached: "&a&l✓ &aPrimo waypoint raggiunto! Seguendo il percorso..."
+    arrived: "&a&l✓ &aSei arrivato a destinazione!"
+
+  pathstop:
+    stopped: "&a&l✓ &aNavigazione fermata."
+    no_active: "&cNon hai nessuna navigazione attiva."
+
+  actionbar:
+    navigation: "&e&l➤ &6Destinazione: &f{distance}m &8| &7Prossimo waypoint: &f{next}m"
+    navigation_final: "&e&l➤ &6Destinazione: &f{distance}m &8| &a&lUltimo tratto!"
+    direct_line: "&e&l➤ &6Destinazione: &f{distance}m &8| &7Modalità: &eLinea diretta"
+    preview: "&e&l➤ &6Destinazione: &f{distance}m &8| &7Punti: &f{points}"
+
+  pathlist:
+    no_destinations: "&cNessuna destinazione salvata."
+    header: "&6&m                &r &6&lDESTINAZIONI DISPONIBILI &6&m                "
+    current_world: "&a&lMondo attuale ({world}):"
+    other_worlds: "&7&lAltri mondi:"
+    entry: "&e▸ &f{name} &7({routes} percorso{s})"
+    location: "  &8└ &7{world} {x}, {y}, {z}"
+    footer: "&7Usa &e/pathgo <nome> &7per navigare."
+
+  pathdelete:
+    usage: "&cUso: /pathdelete <nome>"
+    success: "&a&l✓ &aDestinazione &e{name} &aeliminata con successo!"
+    not_found: "&cLa destinazione &e{name} &cnon esiste."
+
+  pathfinder:
+    reload_success: "&a&l✓ &aConfigurazione ricaricata con successo!"
+    reload_with_errors: "&e&l⚠ &eConfigurazione ricaricata con errori. Controlla la console."
+    lang_changed: "&a&l✓ &aLingua cambiata in: &e{lang}"
+    lang_not_found: "&cFile lingua &e{lang}.yml &cnon trovato."
+    lang_available: "&7Lingue disponibili: &e{languages}"
+    usage: "&e/pathfinder <reload|lang <lingua>>"
