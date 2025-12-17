@@ -8,74 +8,74 @@ messages:
     no_permission: "&cNo tienes permiso para usar este comando."
     player_only: "&cEste comando solo puede ser usado por jugadores."
     player_not_found: "&cEl jugador &e{player} &cno está en línea."
-    invalid_usage: "&cUso incorrecto. Usa: &e{usage}"
+    invalid_usage: "&cUso inválido. Usa: &e{usage}"
 
   # Comando PathSet
   pathset:
-    tool_received: "&a&l✓ &aHerramienta de destino recibida!"
+    tool_received: "&a&l✓ &a¡Herramienta de destino recibida!"
     tool_usage: "&7Click derecho para marcar el &edestino final&7."
-    destination_marked: "&a&l✓ &aDestino final marcado!"
+    destination_marked: "&a&l✓ &a¡Destino final marcado!"
     coordinates: "&7Coordenadas: &e{x}, {y}, {z}"
-    next_step: "&7Ahora usa &e/pathcreate <nombre> &7para crear el destino."
+    next_step: "&7Ahora usa &e/path create <nombre> &7para crear el destino."
 
   # Comando PathCreate
   pathcreate:
-    usage: "&cUso: /pathcreate <nombre>"
+    usage: "&cUso: /path create <nombre>"
     no_pending: "&cPrimero debes marcar un destino con la herramienta."
-    tool_help: "&7Usa &e/pathset &7para obtener la herramienta."
-    success: "&a&l✓ &aDestino &e{name} &acreado exitosamente!"
-    next_step: "&7Ahora usa &e/pathways create {name} &7para crear rutas."
+    tool_help: "&7Usa &e/path set &7para obtener la herramienta."
+    success: "&a&l✓ &a¡Destino &e{name} &acreado exitosamente!"
+    next_step: "&7Ahora usa &e/path ways create {name} &7para crear rutas."
     already_exists: "&cYa existe un destino con ese nombre."
 
   # Comando Pathways
   pathways:
-    usage_create: "&cUso: /pathways create <destino>"
-    usage_save: "&cUso: /pathways <destino> save <nombreRuta>"
-    usage_view: "&cUso: /pathways <destino> view <nombreRuta>"
+    usage_create: "&cUso: /path ways create <destino>"
+    usage_save: "&cUso: /path ways <destino> save <nombreRuta>"
+    usage_view: "&cUso: /path ways <destino> view <nombreRuta>"
     destination_not_found: "&cEl destino &e{name} &cno existe."
-    see_list: "&7Usa &e/pathlist &7para ver los destinos disponibles."
-    tool_received: "&a&l✓ &aHerramienta de waypoints recibida!"
-    tool_usage: "&7Click derecho para marcar waypoints (máx. {max})"
-    undo_help: "&7Deshacer último: &e/pathways undo"
-    save_help: "&7Guardar con: &e/pathways {destination} save <nombreRuta>"
-    route_saved: "&a&l✓ &aRuta &e{name} &aguardada exitosamente!"
-    now_navigate: "&7Ahora puedes usar &e/pathgo {destination} [follow|nofollow|mix] [ruta] [jugador]"
-    no_session: "&cNo tienes una sesión de waypoints activa."
-    start_session: "&7Usa &e/pathways create <destino> &7para iniciar una."
+    see_list: "&7Usa &e/path list &7para ver los destinos disponibles."
+    tool_received: "&a&l✓ &a¡Herramienta de puntos de ruta recibida!"
+    tool_usage: "&7Click derecho para marcar puntos de ruta (máx. {max})"
+    undo_help: "&7Deshacer último: &e/path ways undo"
+    save_help: "&7Guardar con: &e/path ways {destination} save <nombreRuta>"
+    route_saved: "&a&l✓ &a¡Ruta &e{name} &aguardada exitosamente!"
+    now_navigate: "&7Ahora puedes usar &e/path go {destination} [follow|nofollow|mix] [ruta]"
+    no_session: "&cNo tienes una sesión de puntos de ruta activa."
+    start_session: "&7Usa &e/path ways create <destino> &7para iniciar una."
     route_not_found: "&cLa ruta &e{route} &cno existe para el destino &e{destination}&c."
-    viewing_route: "&a&l✓ &aVisualizando ruta: &e{name}"
-    waypoint_count: "&7Waypoints: &f{count}"
-    stop_viewing: "&7Usa &e/pathways stop &7para detener la visualización."
+    viewing_route: "&a&l✓ &aViendo ruta: &e{name}"
+    waypoint_count: "&7Puntos de ruta: &f{count}"
+    stop_viewing: "&7Usa &e/path ways stop &7para dejar de ver."
     viewing_stopped: "&a&l✓ &aVisualización detenida."
-    undo_no_waypoints: "&cNo hay waypoints para deshacer."
-    undo_success: "&c&l✗ &cWaypoint eliminado. &7Restantes: &f{count}"
-    undo_empty: "&7No hay más waypoints en la sesión."
+    undo_no_waypoints: "&cNo hay puntos de ruta para deshacer."
+    undo_success: "&c&l✗ &cPunto de ruta eliminado. &7Restantes: &f{count}"
+    undo_empty: "&7No hay más puntos de ruta en la sesión."
 
-  # Uso de Herramienta de Waypoints
+  # Uso de Herramienta de Puntos de Ruta
   waypoint:
-    marked: "&a&l✓ &aWaypoint #{number} marcado! &7({remaining} restantes)"
-    limit_reached: "&c¡Has alcanzado el límite de {max} waypoints!"
-    limit_warning: "&7Solo quedan &e{remaining} &7waypoints disponibles."
+    marked: "&a&l✓ &a¡Punto de ruta #{number} marcado! &7({remaining} restantes)"
+    limit_reached: "&c¡Has alcanzado el límite de {max} puntos de ruta!"
+    limit_warning: "&7Solo &e{remaining} &7puntos de ruta disponibles."
     save_now: "&e&l⚠ &e¡Límite alcanzado! Guarda la ruta ahora:"
-    save_command: "&e/pathways {destination} save <nombre>"
+    save_command: "&e/path ways {destination} save <nombre>"
 
   # Comando PathGo
   pathgo:
-    usage: "&cUso: /pathgo <destino> [follow|nofollow|mix] [ruta] [jugador]"
-    no_admin_permission: "&cNo tienes permiso para iniciar navegación en otros jugadores."
+    usage: "&cUso: /path go <destino> [follow|nofollow|mix] [ruta] [jugador]"
+    no_admin_permission: "&cNo tienes permiso para iniciar navegación para otros jugadores."
     destination_not_found: "&cEl destino &e{name} &cno existe."
     wrong_world: "&cEste destino está en otro mundo."
     no_route_found: "&cNo se pudo encontrar una ruta adecuada."
-    route_not_found: "&cLa ruta &e{route} &cno existe para este destino."
-    started: "&a&l✓ &aNavegación iniciada hacia &e{destination}&a!"
+    route_not_found: "&cRuta &e{route} &cno encontrada para este destino."
+    started: "&a&l✓ &a¡Navegación iniciada hacia &e{destination}&a!"
     route_selected: "&7Ruta seleccionada: &b{route}"
-    route_waypoints: "&7Waypoints: &f{count}"
-    started_by: "&7Iniciada por: &f{player}"
-    started_for: "&a&l✓ &aNavegación iniciada para &e{player} &ahacia &e{destination}&a!"
+    route_waypoints: "&7Puntos de ruta: &f{count}"
+    started_by: "&7Iniciado por: &f{player}"
+    started_for: "&a&l✓ &a¡Navegación iniciada para &e{player} &ahacia &e{destination}&a!"
     direct_mode: "&7Modo: &eLínea directa &7(sin ruta establecida)"
     nofollow_mode: "&7Modo: &eLínea directa &7(ignorando rutas)"
-    mix_mode: "&7Modo: &eMixto &7(directo al primer waypoint de &b{route}&7)"
-    mix_waypoint_reached: "&a&l✓ &a¡Primer waypoint alcanzado! Siguiendo ruta..."
+    mix_mode: "&7Modo: &eMixto &7(directo al primer punto de &b{route}&7)"
+    mix_waypoint_reached: "&a&l✓ &a¡Primer punto alcanzado! Siguiendo ruta..."
     arrived: "&a&l✓ &a¡Has llegado a tu destino!"
 
   # Comando PathStop
@@ -83,34 +83,54 @@ messages:
     stopped: "&a&l✓ &aNavegación detenida."
     no_active: "&cNo tienes ninguna navegación activa."
 
-  # Mensajes del Action Bar (mostrados durante navegación)
+  # Mensajes de Barra de Acción (mostrados durante la navegación)
   actionbar:
-    navigation: "&e&l➤ &6Destino: &f{distance}m &8| &7Siguiente waypoint: &f{next}m"
-    navigation_final: "&e&l➤ &6Destino: &f{distance}m &8| &a&l¡Último tramo!"
+    navigation: "&e&l➤ &6Destino: &f{distance}m &8| &7Siguiente punto: &f{next}m"
+    navigation_final: "&e&l➤ &6Destino: &f{distance}m &8| &a&l¡Tramo final!"
     direct_line: "&e&l➤ &6Destino: &f{distance}m &8| &7Modo: &eLínea directa"
-    preview: "&e&l➤ &6Destino: &f{distance}m &8| &7Puntos: &f{points}"
 
   # Comando PathList
   pathlist:
     no_destinations: "&cNo hay destinos guardados."
     header: "&6&m                &r &6&lDESTINOS DISPONIBLES &6&m                "
-    current_world: "&a&lMundo Actual ({world}):"
-    other_worlds: "&7&lOtros Mundos:"
+    current_world: "&e&l▸ Mundo Actual: &f{world}"
+    other_worlds: "&e&l▸ Otros Mundos:"
     entry: "&e▸ &f{name} &7({routes} ruta{s})"
     location: "  &8└ &7{world} {x}, {y}, {z}"
-    footer: "&7Usa &e/pathgo <nombre> &7para navegar."
+    footer: "&7Usa &e/path go <nombre> &7para navegar."
 
   # Comando PathDelete
   pathdelete:
-    usage: "&cUso: /pathdelete <nombre>"
-    success: "&a&l✓ &aDestino &e{name} &aeliminado exitosamente!"
+    usage: "&cUso: /path delete <nombre>"
+    success: "&a&l✓ &a¡Destino &e{name} &aeliminado exitosamente!"
     not_found: "&cEl destino &e{name} &cno existe."
 
-  # Comandos Admin Pathfinder
+  # Comando Principal Path (Ayuda)
+  path:
+    help_header: "&6&m                &r &6&lPATHFINDER GPS &6&m                "
+    help_set: "&e/path set &7- Obtener la herramienta de destino"
+    help_create: "&e/path create <n> &7- Crear un destino"
+    help_ways_create: "&e/path ways create <dest> &7- Iniciar sesión de puntos"
+    help_ways_save: "&e/path ways <dest> save <ruta> &7- Guardar ruta"
+    help_ways_view: "&e/path ways <dest> view <ruta> &7- Ver ruta"
+    help_ways_undo: "&e/path ways undo &7- Eliminar último punto"
+    help_ways_stop: "&e/path ways stop &7- Dejar de ver ruta"
+    help_go: "&e/path go <dest> [modo] [ruta] &7- Navegar"
+    help_go_modes: "&7  Modos: &bfollow&7, &bnofollow&7, &bmix"
+    help_stop: "&e/path stop &7- Detener navegación"
+    help_list: "&e/path list &7- Listar todos los destinos"
+    help_delete: "&e/path delete <n> &7- Eliminar destino"
+    help_admin_header: "&c&lComandos de Admin:"
+    help_reload: "&e/path reload &7- Recargar configuración"
+    help_lang: "&e/path lang <idioma> &7- Cambiar idioma"
+    help_aliases: "&7Alias: &e/pathfinder&7, &e/pf"
+    help_footer: "&6&m                                        "
+
+  # Comandos de Admin de Pathfinder
   pathfinder:
-    reload_success: "&a&l✓ &aConfiguración recargada exitosamente!"
+    reload_success: "&a&l✓ &a¡Configuración recargada exitosamente!"
     reload_with_errors: "&e&l⚠ &eConfiguración recargada con errores. Revisa la consola."
     lang_changed: "&a&l✓ &aIdioma cambiado a: &e{lang}"
     lang_not_found: "&cArchivo de idioma &e{lang}.yml &cno encontrado."
     lang_available: "&7Idiomas disponibles: &e{languages}"
-    usage: "&e/pathfinder <reload|lang <idioma>>"
+    usage: "&e/path <set|create|ways|go|stop|list|delete|reload|lang|help>"

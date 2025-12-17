@@ -35,6 +35,8 @@ public class LanguageManager {
         createLanguageFile("en.yml");
         createLanguageFile("es.yml");
         createLanguageFile("pt.yml");
+        createLanguageFile("fr.yml");
+        createLanguageFile("it.yml");
     }
 
     private void createLanguageFile(String fileName) {
@@ -94,34 +96,34 @@ public class LanguageManager {
         loadMessage("pathset.tool_usage", "&7Right-click to mark the &efinal destination&7.");
         loadMessage("pathset.destination_marked", "&a&l✓ &aFinal destination marked!");
         loadMessage("pathset.coordinates", "&7Coordinates: &e{x}, {y}, {z}");
-        loadMessage("pathset.next_step", "&7Now use &e/pathcreate <name> &7to create the destination.");
+        loadMessage("pathset.next_step", "&7Now use &e/path create <name> &7to create the destination.");
 
         // PathCreate
-        loadMessage("pathcreate.usage", "&cUsage: /pathcreate <name>");
+        loadMessage("pathcreate.usage", "&cUsage: /path create <name>");
         loadMessage("pathcreate.no_pending", "&cYou must first mark a destination with the tool.");
-        loadMessage("pathcreate.tool_help", "&7Use &e/pathset &7to get the tool.");
+        loadMessage("pathcreate.tool_help", "&7Use &e/path set &7to get the tool.");
         loadMessage("pathcreate.success", "&a&l✓ &aDestination &e{name} &acreated successfully!");
-        loadMessage("pathcreate.next_step", "&7Now use &e/pathways create {name} &7to create routes.");
+        loadMessage("pathcreate.next_step", "&7Now use &e/path ways create {name} &7to create routes.");
         loadMessage("pathcreate.already_exists", "&cA destination with that name already exists.");
 
         // Pathways
-        loadMessage("pathways.usage_create", "&cUsage: /pathways create <destination>");
-        loadMessage("pathways.usage_save", "&cUsage: /pathways <destination> save <routeName>");
-        loadMessage("pathways.usage_view", "&cUsage: /pathways <destination> view <routeName>");
+        loadMessage("pathways.usage_create", "&cUsage: /path ways create <destination>");
+        loadMessage("pathways.usage_save", "&cUsage: /path ways <destination> save <routeName>");
+        loadMessage("pathways.usage_view", "&cUsage: /path ways <destination> view <routeName>");
         loadMessage("pathways.destination_not_found", "&cDestination &e{name} &cdoesn't exist.");
-        loadMessage("pathways.see_list", "&7Use &e/pathlist &7to see available destinations.");
+        loadMessage("pathways.see_list", "&7Use &e/path list &7to see available destinations.");
         loadMessage("pathways.tool_received", "&a&l✓ &aWaypoint tool received!");
         loadMessage("pathways.tool_usage", "&7Right-click to mark waypoints (max. {max})");
-        loadMessage("pathways.undo_help", "&7Undo last: &e/pathways undo");
-        loadMessage("pathways.save_help", "&7Save with: &e/pathways {destination} save <routeName>");
+        loadMessage("pathways.undo_help", "&7Undo last: &e/path ways undo");
+        loadMessage("pathways.save_help", "&7Save with: &e/path ways {destination} save <routeName>");
         loadMessage("pathways.route_saved", "&a&l✓ &aRoute &e{name} &asaved successfully!");
-        loadMessage("pathways.now_navigate", "&7Now you can use &e/pathgo {destination}");
+        loadMessage("pathways.now_navigate", "&7Now you can use &e/path go {destination}");
         loadMessage("pathways.no_session", "&cYou don't have an active waypoint session.");
-        loadMessage("pathways.start_session", "&7Use &e/pathways create <destination> &7to start one.");
+        loadMessage("pathways.start_session", "&7Use &e/path ways create <destination> &7to start one.");
         loadMessage("pathways.route_not_found", "&cRoute &e{route} &cdoesn't exist for destination &e{destination}&c.");
         loadMessage("pathways.viewing_route", "&a&l✓ &aViewing route: &e{name}");
         loadMessage("pathways.waypoint_count", "&7Waypoints: &f{count}");
-        loadMessage("pathways.stop_viewing", "&7Use &e/pathways stop &7to stop viewing.");
+        loadMessage("pathways.stop_viewing", "&7Use &e/path ways stop &7to stop viewing.");
         loadMessage("pathways.viewing_stopped", "&a&l✓ &aViewing stopped.");
         loadMessage("pathways.undo_no_waypoints", "&cNo waypoints to undo.");
         loadMessage("pathways.undo_success", "&c&l✗ &cWaypoint removed. &7Remaining: &f{count}");
@@ -132,10 +134,10 @@ public class LanguageManager {
         loadMessage("waypoint.limit_reached", "&c&lYou've reached the limit of {max} waypoints!");
         loadMessage("waypoint.limit_warning", "&7Only &e{remaining} &7waypoints available.");
         loadMessage("waypoint.save_now", "&e&l⚠ &eLimit reached! Save the route now:");
-        loadMessage("waypoint.save_command", "&e/pathways {destination} save <name>");
+        loadMessage("waypoint.save_command", "&e/path ways {destination} save <name>");
 
         // PathGo
-        loadMessage("pathgo.usage", "&cUsage: /pathgo <destination> [follow|nofollow|mix] [route] [player]");
+        loadMessage("pathgo.usage", "&cUsage: /path go <destination> [follow|nofollow|mix] [route] [player]");
         loadMessage("pathgo.no_admin_permission", "&cYou don't have permission to start navigation for other players.");
         loadMessage("pathgo.destination_not_found", "&cDestination &e{name} &cdoesn't exist.");
         loadMessage("pathgo.wrong_world", "&cThis destination is in another world.");
@@ -162,11 +164,11 @@ public class LanguageManager {
         loadMessage("pathlist.header", "&6&m                &r &6&lAVAILABLE DESTINATIONS &6&m                ");
         loadMessage("pathlist.entry", "&e▸ &f{name} &7({routes} route{s})");
         loadMessage("pathlist.location", "  &8└ &7{world} {x}, {y}, {z}");
-        loadMessage("pathlist.footer", "&7Use &e/pathgo <name> &7to navigate.");
+        loadMessage("pathlist.footer", "&7Use &e/path go <name> &7to navigate.");
 
 
         // PathDelete
-        loadMessage("pathdelete.usage", "&cUsage: /pathdelete <name>");
+        loadMessage("pathdelete.usage", "&cUsage: /path delete <name>");
         loadMessage("pathdelete.success", "&a&l✓ &aDestination &e{name} &adeleted successfully!");
         loadMessage("pathdelete.not_found", "&cDestination &e{name} &cdoesn't exist.");
 
@@ -178,6 +180,26 @@ public class LanguageManager {
         loadMessage("actionbar.navigation", "&e➤ &fDestination: &a{distance}m &7| Next waypoint: &e{next}m");
         loadMessage("actionbar.navigation_final", "&e➤ &fDestination: &a{distance}m");
         loadMessage("actionbar.direct_line", "&e➤ &fDirect line to destination: &a{distance}m");
+
+        // Path Main Command (Help) - AGREGAR ESTO AL FINAL DE loadAllMessages()
+        loadMessage("path.help_header", "&6&m                &r &6&lPATHFINDER GPS &6&m                ");
+        loadMessage("path.help_set", "&e/path set &7- Get the destination tool");
+        loadMessage("path.help_create", "&e/path create <n> &7- Create a destination");
+        loadMessage("path.help_ways_create", "&e/path ways create <dest> &7- Start waypoint session");
+        loadMessage("path.help_ways_save", "&e/path ways <dest> save <route> &7- Save route");
+        loadMessage("path.help_ways_view", "&e/path ways <dest> view <route> &7- View route");
+        loadMessage("path.help_ways_undo", "&e/path ways undo &7- Remove last waypoint");
+        loadMessage("path.help_ways_stop", "&e/path ways stop &7- Stop viewing route");
+        loadMessage("path.help_go", "&e/path go <dest> [mode] [route] &7- Navigate");
+        loadMessage("path.help_go_modes", "&7  Modes: &bfollow&7, &bnofollow&7, &bmix");
+        loadMessage("path.help_stop", "&e/path stop &7- Stop navigation");
+        loadMessage("path.help_list", "&e/path list &7- List all destinations");
+        loadMessage("path.help_delete", "&e/path delete <n> &7- Delete destination");
+        loadMessage("path.help_admin_header", "&c&lAdmin Commands:");
+        loadMessage("path.help_reload", "&e/path reload &7- Reload configuration");
+        loadMessage("path.help_lang", "&e/path lang <language> &7- Change language");
+        loadMessage("path.help_aliases", "&7Aliases: &e/pathfinder&7, &e/pf");
+        loadMessage("path.help_footer", "&6&m                                        ");
 
         // Pathfinder main commands
         loadMessage("pathfinder.reload_success", "&a&l✓ &aConfiguration reloaded successfully!");

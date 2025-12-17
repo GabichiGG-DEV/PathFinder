@@ -1,6 +1,5 @@
 package me.gabichigg.pathfinder;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -33,14 +32,8 @@ public class PathfinderGPS extends JavaPlugin {
         pathManager = new PathManager(this);
         particleManager = new ParticleManager(this);
 
-        getCommand("pathset").setExecutor(new PathSetCommand(this));
-        getCommand("pathcreate").setExecutor(new PathCreateCommand(this));
-        getCommand("pathways").setExecutor(new PathwaysCommand(this));
-        getCommand("pathgo").setExecutor(new PathGoCommand(this));
-        getCommand("pathstop").setExecutor(new PathStopCommand(this));
-        getCommand("pathlist").setExecutor(new PathListCommand(this));
-        getCommand("pathdelete").setExecutor(new PathDeleteCommand(this));
-        getCommand("pathfinder").setExecutor(new PathfinderCommand(this));
+        // Registrar el comando unificado
+        getCommand("path").setExecutor(new PathCommand(this));
 
         getServer().getPluginManager().registerEvents(new PathToolListener(this), this);
 
@@ -86,7 +79,7 @@ public class PathfinderGPS extends JavaPlugin {
         meta.setDisplayName("§6§lDestination Tool");
         meta.setLore(Arrays.asList(
                 "§7Right-click to mark the §efinal destination",
-                "§7Then use §e/pathcreate <n>"
+                "§7Then use §e/path create <name>"
         ));
 
         meta.addEnchant(Enchantment.UNBREAKING, 1, true);
@@ -110,8 +103,8 @@ public class PathfinderGPS extends JavaPlugin {
                 "§7Creating route for: §e" + pathName,
                 "§7Right-click to mark waypoints",
                 "§7Maximum: §e" + maxWaypoints + " waypoints",
-                "§7Undo: §e/pathways undo",
-                "§7Save with: §e/pathways " + pathName + " save <n>"
+                "§7Undo: §e/path ways undo",
+                "§7Save with: §e/path ways " + pathName + " save <name>"
         ));
 
         meta.addEnchant(Enchantment.UNBREAKING, 1, true);

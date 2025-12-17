@@ -1,105 +1,136 @@
-# PathfinderGPS File Lingua Italiano
-# Usa & per i colori: &a = verde, &c = rosso, &e = giallo, &7 = grigio, ecc.
+# PathfinderGPS File di Lingua Italiano
+# Usa & per i codici colore: &a = verde, &c = rosso, &e = giallo, &7 = grigio, ecc.
 # Segnaposto: {player}, {name}, {destination}, {route}, {count}, {max}, ecc.
 
 messages:
+  # Comandi Generali
   commands:
     no_permission: "&cNon hai il permesso di usare questo comando."
     player_only: "&cQuesto comando può essere usato solo dai giocatori."
     player_not_found: "&cIl giocatore &e{player} &cnon è online."
-    invalid_usage: "&cUso errato. Usa: &e{usage}"
+    invalid_usage: "&cUso non valido. Usa: &e{usage}"
 
+  # Comando PathSet
   pathset:
-    tool_received: "&a&l✓ &aStrumento destinazione ricevuto!"
-    tool_usage: "&7Click destro per segnare la &edestinazione finale&7."
+    tool_received: "&a&l✓ &aStrumento di destinazione ricevuto!"
+    tool_usage: "&7Clic destro per segnare la &edestinazione finale&7."
     destination_marked: "&a&l✓ &aDestinazione finale segnata!"
     coordinates: "&7Coordinate: &e{x}, {y}, {z}"
-    next_step: "&7Ora usa &e/pathcreate <nome> &7per creare la destinazione."
+    next_step: "&7Ora usa &e/path create <nome> &7per creare la destinazione."
 
+  # Comando PathCreate
   pathcreate:
-    usage: "&cUso: /pathcreate <nome>"
+    usage: "&cUso: /path create <nome>"
     no_pending: "&cDevi prima segnare una destinazione con lo strumento."
-    tool_help: "&7Usa &e/pathset &7per ottenere lo strumento."
-    success: "&a&l✓ &aDestinazione &e{name} &acreato con successo!"
-    next_step: "&7Ora usa &e/pathways create {name} &7per creare i percorsi."
-    already_exists: "&cEsiste già una destinazione con questo nome."
+    tool_help: "&7Usa &e/path set &7per ottenere lo strumento."
+    success: "&a&l✓ &aDestinazione &e{name} &acreata con successo!"
+    next_step: "&7Ora usa &e/path ways create {name} &7per creare percorsi."
+    already_exists: "&cEsiste già una destinazione con quel nome."
 
+  # Comando Pathways
   pathways:
-    usage_create: "&cUso: /pathways create <destinazione>"
-    usage_save: "&cUso: /pathways <destinazione> save <nomePercorso>"
-    usage_view: "&cUso: /pathways <destinazione> view <nomePercorso>"
+    usage_create: "&cUso: /path ways create <destinazione>"
+    usage_save: "&cUso: /path ways <destinazione> save <nomePercorso>"
+    usage_view: "&cUso: /path ways <destinazione> view <nomePercorso>"
     destination_not_found: "&cLa destinazione &e{name} &cnon esiste."
-    see_list: "&7Usa &e/pathlist &7per vedere le destinazioni disponibili."
-    tool_received: "&a&l✓ &aStrumento waypoint ricevuto!"
-    tool_usage: "&7Click destro per segnare waypoint (max {max})"
-    undo_help: "&7Annulla ultimo: &e/pathways undo"
-    save_help: "&7Salva con: &e/pathways {destination} save <nomePercorso>"
+    see_list: "&7Usa &e/path list &7per vedere le destinazioni disponibili."
+    tool_received: "&a&l✓ &aStrumento di punti di passaggio ricevuto!"
+    tool_usage: "&7Clic destro per segnare punti di passaggio (max. {max})"
+    undo_help: "&7Annulla ultimo: &e/path ways undo"
+    save_help: "&7Salva con: &e/path ways {destination} save <nomePercorso>"
     route_saved: "&a&l✓ &aPercorso &e{name} &asalvato con successo!"
-    now_navigate: "&7Ora puoi usare &e/pathgo {destination} [follow|nofollow|mix] [Percorso] [Giocatore]"
-    no_session: "&cNon hai una sessione waypoint attiva."
-    start_session: "&7Usa &e/pathways create <destinazione> &7per iniziarne una."
+    now_navigate: "&7Ora puoi usare &e/path go {destination} [follow|nofollow|mix] [percorso]"
+    no_session: "&cNon hai una sessione di punti di passaggio attiva."
+    start_session: "&7Usa &e/path ways create <destinazione> &7per avviarne una."
     route_not_found: "&cIl percorso &e{route} &cnon esiste per la destinazione &e{destination}&c."
-    viewing_route: "&a&l✓ &aVisualizzando percorso: &e{name}"
-    waypoint_count: "&7Waypoint: &f{count}"
-    stop_viewing: "&7Usa &e/pathways stop &7per fermare la visualizzazione."
+    viewing_route: "&a&l✓ &aVisualizzazione percorso: &e{name}"
+    waypoint_count: "&7Punti di passaggio: &f{count}"
+    stop_viewing: "&7Usa &e/path ways stop &7per fermare la visualizzazione."
     viewing_stopped: "&a&l✓ &aVisualizzazione fermata."
-    undo_no_waypoints: "&cNessun waypoint da annullare."
-    undo_success: "&c&l✗ &cWaypoint rimosso. &7Rimanenti: &f{count}"
-    undo_empty: "&7Non ci sono più waypoint nella sessione."
+    undo_no_waypoints: "&cNessun punto di passaggio da annullare."
+    undo_success: "&c&l✗ &cPunto di passaggio rimosso. &7Rimanenti: &f{count}"
+    undo_empty: "&7Non ci sono più punti di passaggio nella sessione."
 
+  # Uso dello Strumento di Punti di Passaggio
   waypoint:
-    marked: "&a&l✓ &aWaypoint #{number} segnato! &7({remaining} rimanenti)"
-    limit_reached: "&cHai raggiunto il limite di {max} waypoint!"
-    limit_warning: "&7Solo &e{remaining} &7waypoint disponibili."
+    marked: "&a&l✓ &aPunto di passaggio #{number} segnato! &7({remaining} rimanenti)"
+    limit_reached: "&cHai raggiunto il limite di {max} punti di passaggio!"
+    limit_warning: "&7Solo &e{remaining} &7punti di passaggio disponibili."
     save_now: "&e&l⚠ &eLimite raggiunto! Salva il percorso ora:"
-    save_command: "&e/pathways {destination} save <nome>"
+    save_command: "&e/path ways {destination} save <nome>"
 
+  # Comando PathGo
   pathgo:
-    usage: "&cUso: /pathgo <destinazione> [follow|nofollow|mix] [percorso] [giocatore]"
+    usage: "&cUso: /path go <destinazione> [follow|nofollow|mix] [percorso] [giocatore]"
     no_admin_permission: "&cNon hai il permesso di avviare la navigazione per altri giocatori."
     destination_not_found: "&cLa destinazione &e{name} &cnon esiste."
-    wrong_world: "&cQuesta destinazione si trova in un altro mondo."
+    wrong_world: "&cQuesta destinazione è in un altro mondo."
     no_route_found: "&cImpossibile trovare un percorso adatto."
-    route_not_found: "&cIl percorso &e{route} &cnon esiste per questa destinazione."
+    route_not_found: "&cPercorso &e{route} &cnon trovato per questa destinazione."
     started: "&a&l✓ &aNavigazione avviata verso &e{destination}&a!"
     route_selected: "&7Percorso selezionato: &b{route}"
-    route_waypoints: "&7Waypoint: &f{count}"
-    started_by: "&7Avviata da: &f{player}"
+    route_waypoints: "&7Punti di passaggio: &f{count}"
+    started_by: "&7Avviato da: &f{player}"
     started_for: "&a&l✓ &aNavigazione avviata per &e{player} &averso &e{destination}&a!"
-    direct_mode: "&7Modalità: &eLinea diretta &7(senza percorso)"
+    direct_mode: "&7Modalità: &eLinea diretta &7(nessun percorso stabilito)"
     nofollow_mode: "&7Modalità: &eLinea diretta &7(ignorando i percorsi)"
-    mix_mode: "&7Modalità: &eMista &7(diretta al primo waypoint di &b{route}&7)"
-    mix_waypoint_reached: "&a&l✓ &aPrimo waypoint raggiunto! Seguendo il percorso..."
-    arrived: "&a&l✓ &aSei arrivato a destinazione!"
+    mix_mode: "&7Modalità: &eMista &7(diretto al primo punto di &b{route}&7)"
+    mix_waypoint_reached: "&a&l✓ &aPrimo punto raggiunto! Seguendo il percorso..."
+    arrived: "&a&l✓ &aSei arrivato alla tua destinazione!"
 
+  # Comando PathStop
   pathstop:
     stopped: "&a&l✓ &aNavigazione fermata."
     no_active: "&cNon hai nessuna navigazione attiva."
 
+  # Messaggi della Barra delle Azioni (mostrati durante la navigazione)
   actionbar:
-    navigation: "&e&l➤ &6Destinazione: &f{distance}m &8| &7Prossimo waypoint: &f{next}m"
-    navigation_final: "&e&l➤ &6Destinazione: &f{distance}m &8| &a&lUltimo tratto!"
+    navigation: "&e&l➤ &6Destinazione: &f{distance}m &8| &7Prossimo punto: &f{next}m"
+    navigation_final: "&e&l➤ &6Destinazione: &f{distance}m &8| &a&l¡Tratto finale!"
     direct_line: "&e&l➤ &6Destinazione: &f{distance}m &8| &7Modalità: &eLinea diretta"
-    preview: "&e&l➤ &6Destinazione: &f{distance}m &8| &7Punti: &f{points}"
 
+  # Comando PathList
   pathlist:
     no_destinations: "&cNessuna destinazione salvata."
     header: "&6&m                &r &6&lDESTINAZIONI DISPONIBILI &6&m                "
-    current_world: "&a&lMondo attuale ({world}):"
-    other_worlds: "&7&lAltri mondi:"
-    entry: "&e▸ &f{name} &7({routes} percorso{s})"
+    current_world: "&e&l▸ Mondo Attuale: &f{world}"
+    other_worlds: "&e&l▸ Altri Mondi:"
+    entry: "&e▸ &f{name} &7({routes} percors{s})"
     location: "  &8└ &7{world} {x}, {y}, {z}"
-    footer: "&7Usa &e/pathgo <nome> &7per navigare."
+    footer: "&7Usa &e/path go <nome> &7per navigare."
 
+  # Comando PathDelete
   pathdelete:
-    usage: "&cUso: /pathdelete <nome>"
+    usage: "&cUso: /path delete <nome>"
     success: "&a&l✓ &aDestinazione &e{name} &aeliminata con successo!"
     not_found: "&cLa destinazione &e{name} &cnon esiste."
 
+  # Comando Principale Path (Aiuto)
+  path:
+    help_header: "&6&m                &r &6&lPATHFINDER GPS &6&m                "
+    help_set: "&e/path set &7- Ottieni lo strumento di destinazione"
+    help_create: "&e/path create <n> &7- Crea una destinazione"
+    help_ways_create: "&e/path ways create <dest> &7- Avvia sessione punti"
+    help_ways_save: "&e/path ways <dest> save <percorso> &7- Salva percorso"
+    help_ways_view: "&e/path ways <dest> view <percorso> &7- Visualizza percorso"
+    help_ways_undo: "&e/path ways undo &7- Rimuovi ultimo punto"
+    help_ways_stop: "&e/path ways stop &7- Ferma visualizzazione"
+    help_go: "&e/path go <dest> [modalità] [percorso] &7- Naviga"
+    help_go_modes: "&7  Modalità: &bfollow&7, &bnofollow&7, &bmix"
+    help_stop: "&e/path stop &7- Ferma navigazione"
+    help_list: "&e/path list &7- Elenca tutte le destinazioni"
+    help_delete: "&e/path delete <n> &7- Elimina destinazione"
+    help_admin_header: "&c&lComandi Admin:"
+    help_reload: "&e/path reload &7- Ricarica configurazione"
+    help_lang: "&e/path lang <lingua> &7- Cambia lingua"
+    help_aliases: "&7Alias: &e/pathfinder&7, &e/pf"
+    help_footer: "&6&m                                        "
+
+  # Comandi Admin di Pathfinder
   pathfinder:
     reload_success: "&a&l✓ &aConfigurazione ricaricata con successo!"
     reload_with_errors: "&e&l⚠ &eConfigurazione ricaricata con errori. Controlla la console."
     lang_changed: "&a&l✓ &aLingua cambiata in: &e{lang}"
-    lang_not_found: "&cFile lingua &e{lang}.yml &cnon trovato."
+    lang_not_found: "&cFile di lingua &e{lang}.yml &cnon trovato."
     lang_available: "&7Lingue disponibili: &e{languages}"
-    usage: "&e/pathfinder <reload|lang <lingua>>"
+    usage: "&e/path <set|create|ways|go|stop|list|delete|reload|lang|help>"

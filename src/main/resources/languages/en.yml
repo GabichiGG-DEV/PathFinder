@@ -16,36 +16,36 @@ messages:
     tool_usage: "&7Right-click to mark the &efinal destination&7."
     destination_marked: "&a&l✓ &aFinal destination marked!"
     coordinates: "&7Coordinates: &e{x}, {y}, {z}"
-    next_step: "&7Now use &e/pathcreate <name> &7to create the destination."
+    next_step: "&7Now use &e/path create <name> &7to create the destination."
 
   # PathCreate Command
   pathcreate:
-    usage: "&cUsage: /pathcreate <name>"
+    usage: "&cUsage: /path create <name>"
     no_pending: "&cYou must first mark a destination with the tool."
-    tool_help: "&7Use &e/pathset &7to get the tool."
+    tool_help: "&7Use &e/path set &7to get the tool."
     success: "&a&l✓ &aDestination &e{name} &acreated successfully!"
-    next_step: "&7Now use &e/pathways create {name} &7to create routes."
+    next_step: "&7Now use &e/path ways create {name} &7to create routes."
     already_exists: "&cA destination with that name already exists."
 
   # Pathways Command
   pathways:
-    usage_create: "&cUsage: /pathways create <destination>"
-    usage_save: "&cUsage: /pathways <destination> save <routeName>"
-    usage_view: "&cUsage: /pathways <destination> view <routeName>"
+    usage_create: "&cUsage: /path ways create <destination>"
+    usage_save: "&cUsage: /path ways <destination> save <routeName>"
+    usage_view: "&cUsage: /path ways <destination> view <routeName>"
     destination_not_found: "&cDestination &e{name} &cdoesn't exist."
-    see_list: "&7Use &e/pathlist &7to see available destinations."
+    see_list: "&7Use &e/path list &7to see available destinations."
     tool_received: "&a&l✓ &aWaypoint tool received!"
     tool_usage: "&7Right-click to mark waypoints (max. {max})"
-    undo_help: "&7Undo last: &e/pathways undo"
-    save_help: "&7Save with: &e/pathways {destination} save <routeName>"
+    undo_help: "&7Undo last: &e/path ways undo"
+    save_help: "&7Save with: &e/path ways {destination} save <routeName>"
     route_saved: "&a&l✓ &aRoute &e{name} &asaved successfully!"
-    now_navigate: "&7Now you can use &e/pathgo {destination} [follow|nofollow|mix] [route] [player] "
+    now_navigate: "&7Now you can use &e/path go {destination} [follow|nofollow|mix] [route]"
     no_session: "&cYou don't have an active waypoint session."
-    start_session: "&7Use &e/pathways create <destination> &7to start one."
+    start_session: "&7Use &e/path ways create <destination> &7to start one."
     route_not_found: "&cRoute &e{route} &cdoesn't exist for destination &e{destination}&c."
     viewing_route: "&a&l✓ &aViewing route: &e{name}"
     waypoint_count: "&7Waypoints: &f{count}"
-    stop_viewing: "&7Use &e/pathways stop &7to stop viewing."
+    stop_viewing: "&7Use &e/path ways stop &7to stop viewing."
     viewing_stopped: "&a&l✓ &aViewing stopped."
     undo_no_waypoints: "&cNo waypoints to undo."
     undo_success: "&c&l✗ &cWaypoint removed. &7Remaining: &f{count}"
@@ -57,11 +57,11 @@ messages:
     limit_reached: "&cYou've reached the limit of {max} waypoints!"
     limit_warning: "&7Only &e{remaining} &7waypoints available."
     save_now: "&e&l⚠ &eLimit reached! Save the route now:"
-    save_command: "&e/pathways {destination} save <name>"
+    save_command: "&e/path ways {destination} save <name>"
 
   # PathGo Command
   pathgo:
-    usage: "&cUsage: /pathgo <destination> [follow|nofollow|mix] [route] [player]"
+    usage: "&cUsage: /path go <destination> [follow|nofollow|mix] [route] [player]"
     no_admin_permission: "&cYou don't have permission to start navigation for other players."
     destination_not_found: "&cDestination &e{name} &cdoesn't exist."
     wrong_world: "&cThis destination is in another world."
@@ -88,7 +88,6 @@ messages:
     navigation: "&e&l➤ &6Destination: &f{distance}m &8| &7Next waypoint: &f{next}m"
     navigation_final: "&e&l➤ &6Destination: &f{distance}m &8| &a&lFinal stretch!"
     direct_line: "&e&l➤ &6Destination: &f{distance}m &8| &7Mode: &eDirect line"
-    preview: "&e&l➤ &6Destination: &f{distance}m &8| &7Points: &f{points}"
 
   # PathList Command
   pathlist:
@@ -98,13 +97,34 @@ messages:
     other_worlds: "&e&l▸ Other Worlds:"
     entry: "&e▸ &f{name} &7({routes} route{s})"
     location: "  &8└ &7{world} {x}, {y}, {z}"
-    footer: "&7Use &e/pathgo <name> &7to navigate."
+    footer: "&7Use &e/path go <name> &7to navigate."
 
   # PathDelete Command
   pathdelete:
-    usage: "&cUsage: /pathdelete <name>"
+    usage: "&cUsage: /path delete <name>"
     success: "&a&l✓ &aDestination &e{name} &adeleted successfully!"
     not_found: "&cDestination &e{name} &cdoesn't exist."
+
+  # Path Main Command (Help)
+  path:
+    help_header: "&6&m                &r &6&lPATHFINDER GPS &6&m                "
+    help_set: "&e/path set &7- Get the destination tool"
+    help_create: "&e/path create <n> &7- Create a destination"
+    help_ways_create: "&e/path ways create <dest> &7- Start waypoint session"
+    help_ways_save: "&e/path ways <dest> save <route> &7- Save route"
+    help_ways_view: "&e/path ways <dest> view <route> &7- View route"
+    help_ways_undo: "&e/path ways undo &7- Remove last waypoint"
+    help_ways_stop: "&e/path ways stop &7- Stop viewing route"
+    help_go: "&e/path go <dest> [mode] [route] &7- Navigate"
+    help_go_modes: "&7  Modes: &bfollow&7, &bnofollow&7, &bmix"
+    help_stop: "&e/path stop &7- Stop navigation"
+    help_list: "&e/path list &7- List all destinations"
+    help_delete: "&e/path delete <n> &7- Delete destination"
+    help_admin_header: "&c&lAdmin Commands:"
+    help_reload: "&e/path reload &7- Reload configuration"
+    help_lang: "&e/path lang <language> &7- Change language"
+    help_aliases: "&7Aliases: &e/pathfinder&7, &e/pf"
+    help_footer: "&6&m                                        "
 
   # Pathfinder Admin Commands
   pathfinder:
@@ -113,4 +133,4 @@ messages:
     lang_changed: "&a&l✓ &aLanguage changed to: &e{lang}"
     lang_not_found: "&cLanguage file &e{lang}.yml &cnot found."
     lang_available: "&7Available languages: &e{languages}"
-    usage: "&e/pathfinder <reload|lang <language>>"
+    usage: "&e/path <set|create|ways|go|stop|list|delete|reload|lang|help>"
