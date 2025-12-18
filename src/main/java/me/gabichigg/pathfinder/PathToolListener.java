@@ -42,6 +42,10 @@ public class PathToolListener implements Listener {
             return;
         }
 
+        // Seguridad: verificar que el bloque clicado no sea null (analizadores estáticos lo sugieren)
+        if (event.getClickedBlock() == null) return;
+        org.bukkit.block.Block clickedBlock = event.getClickedBlock();
+
         // Verificar herramienta de DESTINO (pala)
         if (item.getItemMeta().getPersistentDataContainer()
                 .has(plugin.getPathToolKey(), PersistentDataType.BYTE)) {
@@ -53,7 +57,7 @@ public class PathToolListener implements Listener {
                 return;
             }
 
-            handleDestinationTool(player, event.getClickedBlock().getLocation());
+            handleDestinationTool(player, clickedBlock.getLocation().clone());
             return;
         }
 
@@ -70,7 +74,8 @@ public class PathToolListener implements Listener {
 
             String destName = item.getItemMeta().getPersistentDataContainer()
                     .get(plugin.getWaypointToolKey(), PersistentDataType.STRING);
-            handleWaypointTool(player, event.getClickedBlock().getLocation(), destName);
+            // pass a clone to avoid mutating the block location
+            handleWaypointTool(player, clickedBlock.getLocation().clone(), destName);
             return;
         }
     }
@@ -93,7 +98,8 @@ public class PathToolListener implements Listener {
             return;
         }
 
-        Location destination = clickedLocation.add(0, 1, 0);
+        // Center the marker on top of the clicked block: add 0.5 to X and Z.
+        Location destination = clickedLocation.add(0.5, 1, 0.5);
         plugin.getPathManager().setPendingDestination(player.getUniqueId(), destination);
 
         // Efectos
@@ -121,7 +127,8 @@ public class PathToolListener implements Listener {
             return;
         }
 
-        Location waypoint = clickedLocation.add(0, 1, 0);
+        // Center the waypoint on the clicked block
+        Location waypoint = clickedLocation.add(0.5, 1, 0.5);
 
         if (!plugin.getPathManager().addWaypoint(player.getUniqueId(), waypoint)) {
             int max = plugin.getConfigManager().getMaxWaypoints();

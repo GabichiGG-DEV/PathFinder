@@ -117,6 +117,15 @@ public class LanguageManager {
         loadMessage("pathcreate.already_exists", "&cA destination with that name already exists.");
 
         // Pathways
+        // Name and lore for Waypoint tool (configurable)
+        loadMessage("pathways.tool_name", "&b&lWaypoint Tool");
+        loadMessageList("pathways.tool_lore", Arrays.asList(
+                "&7Creating route for: &e{pathName}",
+                "&7Right-click to mark waypoints",
+                "&7Maximum: &e{max} waypoints",
+                "&7Undo: &e/path ways undo",
+                "&7Save with: &e/path ways {pathName} save <name>"
+        ));
         loadMessage("pathways.usage_create", "&cUsage: /path ways create <destination>");
         loadMessage("pathways.usage_save", "&cUsage: /path ways <destination> save <routeName>");
         loadMessage("pathways.usage_view", "&cUsage: /path ways <destination> view <routeName>");
