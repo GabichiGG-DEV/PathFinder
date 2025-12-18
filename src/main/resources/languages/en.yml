@@ -12,6 +12,10 @@ messages:
 
   # PathSet Command
   pathset:
+    tool_name: "&6&lDestination Tool"
+    tool_lore:
+      - "&7Right-click to mark the &efinal destination"
+      - "&7Then use &e/path create <name>"
     tool_received: "&a&l✓ &aDestination tool received!"
     tool_usage: "&7Right-click to mark the &efinal destination&7."
     destination_marked: "&a&l✓ &aFinal destination marked!"
@@ -29,6 +33,13 @@ messages:
 
   # Pathways Command
   pathways:
+    tool_name: "&b&lWaypoint Tool"
+    tool_lore:
+      - "&7Creating route for: &e{pathName}"
+      - "&7Right-click to mark waypoints"
+      - "&7Maximum: &e{max} waypoints"
+      - "&7Undo: &e/path ways undo"
+      - "&7Save with: &e/path ways {pathName} save <name>"
     usage_create: "&cUsage: /path ways create <destination>"
     usage_save: "&cUsage: /path ways <destination> save <routeName>"
     usage_view: "&cUsage: /path ways <destination> view <routeName>"

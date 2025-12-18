@@ -14,10 +14,12 @@ public class LanguageManager {
     private FileConfiguration langConfig;
     private final Map<String, String> messages;
     private final List<String> langErrors;
+    private final Map<String, List<String>> messageLists;
 
     public LanguageManager(PathfinderGPS plugin) {
         this.plugin = plugin;
         this.messages = new HashMap<>();
+        this.messageLists = new HashMap<>();
         this.langErrors = new ArrayList<>();
         this.currentLanguage = "en";
 
@@ -49,6 +51,7 @@ public class LanguageManager {
     public boolean loadLanguage(String lang) {
         langErrors.clear();
         messages.clear();
+        messageLists.clear();
 
         File langFile = new File(plugin.getDataFolder() + "/languages", lang + ".yml");
 
@@ -92,6 +95,13 @@ public class LanguageManager {
         loadMessage("commands.invalid_usage", "&cInvalid usage. Use: &e{usage}");
 
         // PathSet
+        // Name and lore for Destination tool (configurable)
+        loadMessage("pathset.tool_name", "&6&lDestination Tool");
+        loadMessageList("pathset.tool_lore", Arrays.asList(
+                "&7Right-click to mark the &efinal destination",
+                "&7Then use &e/path create <name>"
+        ));
+
         loadMessage("pathset.tool_received", "&a&l✓ &aDestination tool received!");
         loadMessage("pathset.tool_usage", "&7Right-click to mark the &efinal destination&7.");
         loadMessage("pathset.destination_marked", "&a&l✓ &aFinal destination marked!");
@@ -166,7 +176,6 @@ public class LanguageManager {
         loadMessage("pathlist.location", "  &8└ &7{world} {x}, {y}, {z}");
         loadMessage("pathlist.footer", "&7Use &e/path go <name> &7to navigate.");
 
-
         // PathDelete
         loadMessage("pathdelete.usage", "&cUsage: /path delete <name>");
         loadMessage("pathdelete.success", "&a&l✓ &aDestination &e{name} &adeleted successfully!");
@@ -186,8 +195,8 @@ public class LanguageManager {
         loadMessage("path.help_set", "&e/path set &7- Get the destination tool");
         loadMessage("path.help_create", "&e/path create <n> &7- Create a destination");
         loadMessage("path.help_ways_create", "&e/path ways create <dest> &7- Start waypoint session");
-        loadMessage("path.help_ways_save", "&e/path ways <dest> save <route> &7- Save route");
-        loadMessage("path.help_ways_view", "&e/path ways <dest> view <route> &7- View route");
+        loadMessage("path.help_ways_save", "&e/path ways <dest> save <routeName> &7- Save route");
+        loadMessage("path.help_ways_view", "&e/path ways <dest> view <routeName> &7- View route");
         loadMessage("path.help_ways_undo", "&e/path ways undo &7- Remove last waypoint");
         loadMessage("path.help_ways_stop", "&e/path ways stop &7- Stop viewing route");
         loadMessage("path.help_go", "&e/path go <dest> [mode] [route] &7- Navigate");
@@ -208,6 +217,59 @@ public class LanguageManager {
         loadMessage("pathfinder.lang_not_found", "&cLanguage file &e{lang}.yml &cnot found.");
         loadMessage("pathfinder.lang_available", "&7Available languages: &e{languages}");
         loadMessage("pathfinder.usage", "&e/pathfinder <reload|lang <language>>");
+    }
+
+    private void loadMessageList(String key, List<String> defaultLines) {
+        String path = "messages." + key;
+        if (!langConfig.contains(path) || !langConfig.isList(path)) {
+            langErrors.add("Missing or invalid message list key: " + key);
+            List<String> translated = new ArrayList<>();
+            for (String line : defaultLines) {
+                translated.add(ChatColor.translateAlternateColorCodes('&', line));
+            }
+            messageLists.put(key, translated);
+            return;
+        }
+
+        List<String> lines = langConfig.getStringList(path);
+        List<String> translated = new ArrayList<>();
+        for (String line : lines) {
+            translated.add(ChatColor.translateAlternateColorCodes('&', line));
+        }
+        messageLists.put(key, translated);
+    }
+
+    public List<String> getMessageList(String key, Object... replacements) {
+        List<String> list = messageLists.get(key);
+        if (list == null) {
+            // Try to fallback to reading directly from config (in case loadAllMessages wasn't updated)
+            String path = "messages." + key;
+            if (langConfig != null && langConfig.contains(path) && langConfig.isList(path)) {
+                List<String> lines = langConfig.getStringList(path);
+                list = new ArrayList<>();
+                for (String line : lines) {
+                    list.add(ChatColor.translateAlternateColorCodes('&', line));
+                }
+            } else {
+                return Collections.emptyList();
+            }
+        }
+
+        // Apply replacements
+        List<String> result = new ArrayList<>();
+        for (String line : list) {
+            String replaced = line;
+            for (int i = 0; i < replacements.length; i += 2) {
+                if (i + 1 < replacements.length) {
+                    String placeholder = "{" + replacements[i] + "}";
+                    String value = String.valueOf(replacements[i + 1]);
+                    replaced = replaced.replace(placeholder, value);
+                }
+            }
+            result.add(replaced);
+        }
+
+        return result;
     }
 
     private void loadMessage(String key, String defaultValue) {

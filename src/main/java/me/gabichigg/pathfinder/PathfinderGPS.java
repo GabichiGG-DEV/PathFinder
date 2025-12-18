@@ -76,11 +76,16 @@ public class PathfinderGPS extends JavaPlugin {
         ItemStack tool = new ItemStack(Material.DIAMOND_SHOVEL);
         ItemMeta meta = tool.getItemMeta();
 
-        meta.setDisplayName("§6§lDestination Tool");
-        meta.setLore(Arrays.asList(
-                "§7Right-click to mark the §efinal destination",
-                "§7Then use §e/path create <name>"
-        ));
+        // Use language manager for name and lore
+        String name = languageManager.getMessage("pathset.tool_name");
+        java.util.List<String> lore = languageManager.getMessageList("pathset.tool_lore");
+
+        if (name != null && !name.isEmpty()) {
+            meta.setDisplayName(name);
+        }
+        if (lore != null && !lore.isEmpty()) {
+            meta.setLore(lore);
+        }
 
         meta.addEnchant(Enchantment.UNBREAKING, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -98,14 +103,16 @@ public class PathfinderGPS extends JavaPlugin {
 
         int maxWaypoints = configManager.getMaxWaypoints();
 
-        meta.setDisplayName("§b§lWaypoint Tool");
-        meta.setLore(Arrays.asList(
-                "§7Creating route for: §e" + pathName,
-                "§7Right-click to mark waypoints",
-                "§7Maximum: §e" + maxWaypoints + " waypoints",
-                "§7Undo: §e/path ways undo",
-                "§7Save with: §e/path ways " + pathName + " save <name>"
-        ));
+        // Use language manager for name and lore (with placeholders)
+        String wpName = languageManager.getMessage("pathways.tool_name");
+        java.util.List<String> wpLore = languageManager.getMessageList("pathways.tool_lore", "pathName", pathName, "max", maxWaypoints);
+
+        if (wpName != null && !wpName.isEmpty()) {
+            meta.setDisplayName(wpName);
+        }
+        if (wpLore != null && !wpLore.isEmpty()) {
+            meta.setLore(wpLore);
+        }
 
         meta.addEnchant(Enchantment.UNBREAKING, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);

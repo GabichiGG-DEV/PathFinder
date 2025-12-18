@@ -12,6 +12,10 @@ messages:
 
   # Comando PathSet
   pathset:
+    tool_name: "&6&lStrumento di Destinazione"
+    tool_lore:
+      - "&7Clic destro per segnare la &edestinazione finale"
+      - "&7Poi usa &e/path create <nome>"
     tool_received: "&a&l✓ &aStrumento di destinazione ricevuto!"
     tool_usage: "&7Clic destro per segnare la &edestinazione finale&7."
     destination_marked: "&a&l✓ &aDestinazione finale segnata!"
@@ -29,6 +33,13 @@ messages:
 
   # Comando Pathways
   pathways:
+    tool_name: "&b&lStrumento di Punti"
+    tool_lore:
+      - "&7Creando percorso per: &e{pathName}"
+      - "&7Clic destro per segnare punti di passaggio"
+      - "&7Massimo: &e{max} punti"
+      - "&7Annulla: &e/path ways undo"
+      - "&7Salva con: &e/path ways {pathName} save <nome>"
     usage_create: "&cUso: /path ways create <destinazione>"
     usage_save: "&cUso: /path ways <destinazione> save <nomePercorso>"
     usage_view: "&cUso: /path ways <destinazione> view <nomePercorso>"

@@ -12,6 +12,10 @@ messages:
 
   # Commande PathSet
   pathset:
+    tool_name: "&6&lOutil de Destination"
+    tool_lore:
+      - "&7Clic droit pour marquer la &edestination finale"
+      - "&7Ensuite utilisez &e/path create <nom>"
     tool_received: "&a&l✓ &aOutil de destination reçu!"
     tool_usage: "&7Clic droit pour marquer la &edestination finale&7."
     destination_marked: "&a&l✓ &aDestination finale marquée!"
@@ -29,6 +33,13 @@ messages:
 
   # Commande Pathways
   pathways:
+    tool_name: "&b&lOutil de Points"
+    tool_lore:
+      - "&7Création de la route pour: &e{pathName}"
+      - "&7Clic droit pour marquer les points de passage"
+      - "&7Maximum: &e{max} points"
+      - "&7Annuler: &e/path ways undo"
+      - "&7Enregistrer avec: &e/path ways {pathName} save <nom>"
     usage_create: "&cUtilisation: /path ways create <destination>"
     usage_save: "&cUtilisation: /path ways <destination> save <nomRoute>"
     usage_view: "&cUtilisation: /path ways <destination> view <nomRoute>"
