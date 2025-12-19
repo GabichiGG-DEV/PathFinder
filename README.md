@@ -6,7 +6,7 @@
 
 **PathFinder GPS** es un plugin de navegación para servidores Minecraft que permite crear destinos y rutas visuales personalizadas usando partículas para guiar a los jugadores por tu mundo.
 
-![PathFinder Banner](https://via.placeholder.com/800x200/4a5568/ffffff?text=PathFinder+GPS)
+![PathFinder Banner](assets/banner.png)
 
 ---
 
