@@ -45,7 +45,7 @@
 [Click derecho en un bloque] # Marca la ubicación
 /path create Spawn           # Crea el destino
 ```
-![Pathset](assets/pathset2.gif)
+![Pathset](assets/1.gif)
 
 ### Navegar a un Destino
 
