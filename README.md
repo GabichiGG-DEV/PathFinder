@@ -46,6 +46,7 @@
 /path create Spawn           # Crea el destino
 ```
 ![Pathset](assets/1.gif)
+![Pathset](assets/2.gif)
 
 ### Navegar a un Destino
 
@@ -53,6 +54,7 @@
 /path go Spawn              # Navega al destino
 /path list                  # Lista todos los destinos
 ```
+![Pathset](assets/3.gif)
 
 ### Crear una Ruta Personalizada
 
@@ -61,7 +63,8 @@
 [Click derecho para marcar puntos]   # Marca waypoints (de atrás hacia adelante)
 /path ways Spawn save ruta_norte     # Guarda la ruta
 ```
-
+![Pathset](assets/4.gif)
+![Pathset](assets/5.gif)
 ---
 
 ## 📋 Comandos Principales
@@ -91,17 +94,23 @@
 ```
 Sigue la ruta con waypoints más cercana al jugador.
 
+![Pathset](assets/6.gif)
+
 ### NoFollow (Línea Recta)
 ```bash
 /path go Spawn nofollow
 ```
 Genera una línea recta directa ignorando rutas.
 
+![Pathset](assets/7.gif)
+
 ### Mix (Híbrido)
 ```bash
 /path go Spawn mix
 ```
 Línea recta al primer waypoint, luego sigue la ruta.
+
+![Pathset](assets/8.gif)
 
 ### Forzar Ruta Específica
 ```bash
