@@ -25,7 +25,7 @@
 
 ---
 
-## 📦 Installation
+##  Installation
 
 1. Download the `PathFinder.jar` file
 2. Place it in your server's `plugins/` folder
@@ -38,7 +38,7 @@
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Create a Destination
 
@@ -69,7 +69,7 @@
 ![Pathset](assets/5.gif)
 ---
 
-## 📋 Main Commands
+##  Main Commands
 
 | Command | Description |
 |---------|-------------|
@@ -88,7 +88,7 @@
 
 ---
 
-## 🎯 Navigation Modes
+##  Navigation Modes
 
 ### Follow (Follow Route)
 ```bash
@@ -128,7 +128,7 @@ Straight line to the first waypoint, then follows the route.
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 The `config.yml` file is located at `plugins/PathFinder/config.yml`
 
@@ -167,7 +167,7 @@ After editing, use `/path reload` to apply changes.
 
 ---
 
-## 🔐 Permissions
+##  Permissions
 
 | Permission | Description | Default |
 |---------|-------------|---------|
@@ -192,7 +192,7 @@ After editing, use `/path reload` to apply changes.
 
 ---
 
-## 🔗 Integration with Other Plugins
+##  Integration with Other Plugins
 
 PathFinder supports the `%player%` placeholder for integration with other plugins:
 
@@ -218,7 +218,7 @@ spawn-button:
 
 ---
 
-## 🌐 Languages
+##  Languages
 
 PathFinder includes 5 languages:
 
@@ -249,24 +249,24 @@ default_language: "en"
 
 ---
 
-## 📖 Full Documentation
+##  Full Documentation
 
 For detailed guides, visit our [**Wiki**](../../wiki):
 
-- [🚀 Installation](../../wiki/Installation)
-- [📝 Basic Commands](../../wiki/Basic-Commands)
-- [🎯 Creating Destinations](../../wiki/Creating-Destinations)
-- [🛤️ Creating Routes](../../wiki/Creating-Routes)
-- [🧭 Navigation](../../wiki/Navigation)
-- [⚙️ Configuration](../../wiki/Configuration)
-- [🌐 Languages](../../wiki/Languages)
-- [🔐 Permissions](../../wiki/Permissions)
-- [🔗 Integration](../../wiki/Integration)
-- [❓ FAQ](../../wiki/FAQ)
+- [ Installation](../../wiki/Installation)
+- [ Basic Commands](../../wiki/Basic-Commands)
+- [ Creating Destinations](../../wiki/Creating-Destinations)
+- [ Creating Routes](../../wiki/Creating-Routes)
+- [ Navigation](../../wiki/Navigation)
+- [ Configuration](../../wiki/Configuration)
+- [ Languages](../../wiki/Languages)
+- [ Permissions](../../wiki/Permissions)
+- [ Integration](../../wiki/Integration)
+- [ FAQ](../../wiki/FAQ)
 
 ---
 
-## 💡 Usage Examples
+##  Usage Examples
 
 ### Survival Server
 ```bash
@@ -301,7 +301,7 @@ spawn:
 
 ---
 
-## 🎨 Visual Customization
+##  Visual Customization
 
 ### Change Particles
 ```yaml
@@ -322,7 +322,7 @@ colors:
 
 ---
 
-## ❓ Frequently Asked Questions
+##  Frequently Asked Questions
 
 ### Are routes necessary?
 No, destinations work without routes. PathFinder will automatically generate a straight line.
@@ -344,32 +344,31 @@ Navigation stops automatically when reaching the destination, changing worlds, o
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Want to contribute? Great!
 
-- 🐛 **Report bugs** in [Issues](../../issues)
-- 💡 **Suggest features** in [Issues](../../issues)
-- 🌐 **Share custom translations**
-- ⭐ **Star the project**
+-  **Report bugs** in [Issues](../../issues)
+-  **Suggest features** in [Issues](../../issues)
+-  **Share custom translations**
+-  **Star the project**
 
 ---
 
-## 📄 License
+##  License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## 📞 Support
-
-- 📖 **Wiki**: [Full Documentation](../../wiki)
-- 🐛 **Issues**: [Report Problems](../../issues)
-- 💬 **Discord**: [Support Server](#) *(add your link)*
+This project is licensed under the MIT License.
 
 ---
 
-## 🙏 Acknowledgments
+##  Support
+
+-  **Wiki**: [Full Documentation](../../wiki)
+-  **Issues**: [Report Problems](../../issues)
+
+---
+
+##  Acknowledgments
 
 Thanks to everyone who has contributed and supported the development of PathFinder GPS.
 
@@ -377,8 +376,7 @@ Thanks to everyone who has contributed and supported the development of PathFind
 
 <div align="center">
 
-**[⬆ Back to top](#-pathfinder-gps)**
 
-Made with ❤️ for the Minecraft community
+Made with ❤️ by GabichiGG
 
 </div>
