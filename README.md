@@ -1,215 +1,372 @@
-# 🗺️ PathfinderGPS
+# 🧭 PathFinder GPS
 
-[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.1-brightgreen.svg)](https://www.minecraft.net/)
-[![Paper](https://img.shields.io/badge/Paper-Required-blue.svg)](https://papermc.io/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0.0-red.svg)](https://github.com/GabiChigg/PathfinderGPS/releases)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.16+-brightgreen.svg)](https://www.spigotmc.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Spigot](https://img.shields.io/badge/Spigot-Compatible-orange.svg)](https://www.spigotmc.org/)
 
-**PathfinderGPS** is a professional GPS navigation system for Minecraft Paper 1.21.1+ that creates beautiful particle paths to guide players to their destinations.
+**PathFinder GPS** es un plugin de navegación para servidores Minecraft que permite crear destinos y rutas visuales personalizadas usando partículas para guiar a los jugadores por tu mundo.
 
-![PathfinderGPS Demo](https://via.placeholder.com/800x400/1a1a1a/00ff00?text=PathfinderGPS+Demo)
+![PathFinder Banner](https://via.placeholder.com/800x200/4a5568/ffffff?text=PathFinder+GPS)
 
-## ✨ Features
+---
 
-- 🎯 **Multiple Routes per Destination** - Create several paths to the same location
-- 🌈 **Customizable Particles** - Configure colors, types, and density
-- 🗣️ **Multi-Language Support** - English, Spanish, Portuguese (+ custom)
-- 🎨 **Visual Waypoint System** - Mark up to 30 waypoints with visual feedback
-- 🔄 **Real-time Path Preview** - See your route while creating it
-- ↩️ **Undo System** - Made a mistake? Just undo the last waypoint
-- 🎮 **Admin Controls** - Force navigation for other players
-- 📍 **Direct Line Fallback** - Works even without custom routes
-- ⚙️ **Fully Configurable** - Colors, sounds, distances, and more
-- 🔄 **Hot Reload** - Reload config without restarting server
+## ✨ Características
 
-## 📥 Installation
+- 🗺️ **Creación de Destinos** - Marca ubicaciones importantes en tu mundo
+- 🛤️ **Rutas Personalizadas** - Crea caminos visuales con waypoints
+- 🎨 **Partículas Personalizables** - Configura colores, tipos y densidad
+- 🌍 **Soporte Multi-Mundo** - Funciona en múltiples mundos simultáneamente
+- 🌐 **Multi-Idioma** - 5 idiomas incluidos (ES, EN, PT, FR, IT)
+- 🔧 **Altamente Configurable** - Personaliza cada aspecto del plugin
+- 🎮 **Fácil de Usar** - Sistema intuitivo de comandos
+- 🔗 **Integración** - Compatible con DeluxeMenus, Citizens, ChestCommands y más
 
-1. Download the latest release from [Releases](https://github.com/GabiChigg/PathfinderGPS/releases)
-2. Place `PathfinderGPS-1.0.0.jar` in your server's `plugins/` folder
-3. Restart your server
-4. Configure `plugins/PathfinderGPS/config.yml` (optional)
-5. Choose your language with `/pathfinder lang <en|es|pt>`
+---
 
-## 🚀 Quick Start
+## 📦 Instalación
 
-### Creating Your First Route
+1. Descarga el archivo `PathFinder.jar`
+2. Colócalo en la carpeta `plugins/` de tu servidor
+3. Reinicia el servidor
+4. ¡Listo! El plugin está activo
 
-```bash
-# 1. Get the destination tool
-/pathset
+**Requisitos:**
+- Servidor Spigot o Paper
+- Java 8 o superior
 
-# 2. Right-click on the destination block
-[Right-click with diamond shovel]
+---
 
-# 3. Create the destination
-/pathcreate spawn
+## 🚀 Inicio Rápido
 
-# 4. Get waypoint tool to create a custom route
-/pathways create spawn
-
-# 5. Mark waypoints along your desired path
-[Right-click blocks with recovery compass]
-
-# 6. Save the route
-/pathways spawn save main_route
-
-# 7. Navigate to your destination
-/pathgo spawn
-```
-
-### Using Navigation
+### Crear un Destino
 
 ```bash
-# Navigate to a destination
-/pathgo spawn
-
-# Stop navigation
-/pathstop
-
-# View all destinations
-/pathlist
-
-# Preview a specific route
-/pathways spawn view main_route
+/path set                    # Obtén la herramienta (Pala de Diamante)
+[Click derecho en un bloque] # Marca la ubicación
+/path create Spawn           # Crea el destino
 ```
 
-## 📋 Commands
+### Navegar a un Destino
 
-| Command | Description | Permission |
-|---------|-------------|------------|
-| `/pathset` | Get destination marking tool | `pathfinder.set` |
-| `/pathcreate <name>` | Create a destination | `pathfinder.create` |
-| `/pathways create <dest>` | Start waypoint session | `pathfinder.create` |
-| `/pathways undo` | Remove last waypoint | `pathfinder.create` |
-| `/pathways <dest> save <route>` | Save current route | `pathfinder.create` |
-| `/pathways <dest> view <route>` | Preview a route | `pathfinder.create` |
-| `/pathways stop` | Stop route preview | `pathfinder.create` |
-| `/pathgo <dest> [player]` | Start navigation | `pathfinder.use` |
-| `/pathstop` | Stop navigation | `pathfinder.use` |
-| `/pathlist` | List all destinations | `pathfinder.list` |
-| `/pathdelete <name>` | Delete a destination | `pathfinder.delete` |
-| `/pathfinder reload` | Reload configuration | `pathfinder.admin` |
-| `/pathfinder lang <language>` | Change language | `pathfinder.admin` |
+```bash
+/path go Spawn              # Navega al destino
+/path list                  # Lista todos los destinos
+```
 
-## 🎨 Configuration
+### Crear una Ruta Personalizada
 
-PathfinderGPS is highly customizable. Edit `config.yml` to change:
+```bash
+/path ways create Spawn              # Inicia sesión de waypoints
+[Click derecho para marcar puntos]   # Marca waypoints (de atrás hacia adelante)
+/path ways Spawn save ruta_norte     # Guarda la ruta
+```
 
-- Maximum waypoints per route (1-100)
-- Particle types and density
-- RGB colors for different distances
-- Sound effects and volume
-- Distance thresholds
+---
 
-### Example config.yml
+## 📋 Comandos Principales
+
+| Comando | Descripción |
+|---------|-------------|
+| `/path set` | Obtiene la herramienta para marcar destinos |
+| `/path create <nombre>` | Crea un destino en la ubicación marcada |
+| `/path go <destino>` | Navega a un destino |
+| `/path list` | Muestra todos los destinos disponibles |
+| `/path delete <destino>` | Elimina un destino y sus rutas |
+| `/path ways create <destino>` | Inicia creación de ruta con waypoints |
+| `/path ways <destino> save <ruta>` | Guarda la ruta creada |
+| `/path ways undo` | Deshace el último waypoint |
+| `/path reload` | Recarga la configuración |
+| `/path lang <idioma>` | Cambia el idioma (es, en, pt, fr, it) |
+
+**Alias:** `/path`, `/pathfinder`, `/pf`
+
+---
+
+## 🎯 Modos de Navegación
+
+### Follow (Seguir Ruta)
+```bash
+/path go Spawn follow
+```
+Sigue la ruta con waypoints más cercana al jugador.
+
+### NoFollow (Línea Recta)
+```bash
+/path go Spawn nofollow
+```
+Genera una línea recta directa ignorando rutas.
+
+### Mix (Híbrido)
+```bash
+/path go Spawn mix
+```
+Línea recta al primer waypoint, luego sigue la ruta.
+
+### Forzar Ruta Específica
+```bash
+/path go Spawn follow ruta_norte
+/path go Spawn mix ruta_sur
+```
+
+### Para Otros Jugadores
+```bash
+/path go Spawn follow Steve
+/path go Spawn mix Alex ruta_norte
+```
+
+---
+
+## ⚙️ Configuración
+
+El archivo `config.yml` se encuentra en `plugins/PathFinder/config.yml`
+
+### Ejemplo de Configuración
 
 ```yaml
+# Waypoint Settings
 waypoints:
-  max_waypoints: 30
+  max_waypoints: 30  # Máximo de waypoints por ruta
 
+# Particle Settings
 particles:
   waypoint_particle: "DUST"
-  session_line_particle: "DUST"
   navigation_line_particle: "DUST"
-  particle_density: 3
+  particle_density: 3  # 1-10
 
+# Colors (RGB 0-255)
 colors:
   distance_colors:
-    close: [255, 85, 85]    # Red
-    medium: [255, 255, 85]  # Yellow
-    far: [85, 255, 85]      # Green
-    very_far: [85, 85, 255] # Blue
+    close: [255, 85, 85]      # Rojo
+    medium: [255, 255, 85]    # Amarillo
+    far: [85, 255, 85]        # Verde
+    very_far: [85, 85, 255]   # Azul
 
+# Distances (blocks)
 distances:
   close: 5.0
   medium: 15.0
   far: 30.0
+
+# Language
+default_language: "es"  # es, en, pt, fr, it
 ```
 
-## 🌍 Languages
-
-Available languages:
-- 🇺🇸 English (`en.yml`)
-- 🇪🇸 Spanish (`es.yml`)
-- 🇧🇷 Portuguese (`pt.yml`)
-
-Create custom languages by copying any `.yml` file in `languages/` folder!
-
-## 🔧 Permissions
-
-| Permission | Description | Default |
-|-----------|-------------|---------|
-| `pathfinder.*` | All permissions | OP |
-| `pathfinder.set` | Create destinations | OP |
-| `pathfinder.create` | Create routes | OP |
-| `pathfinder.use` | Use navigation | All players |
-| `pathfinder.list` | List destinations | All players |
-| `pathfinder.delete` | Delete destinations | OP |
-| `pathfinder.admin` | Admin commands | OP |
-
-## 🎯 Use Cases
-
-- **Spawn Protection** - Guide new players to spawn
-- **Quest Systems** - Direct players to quest locations
-- **Server Tours** - Create guided tours with multiple routes
-- **PvP Arenas** - Help players find different arena entrances
-- **Minigames** - Guide players through complex game maps
-- **RPG Servers** - Create immersive navigation for cities
-
-## 🔌 API Usage
-
-Other plugins can integrate with PathfinderGPS:
-
-```java
-// Get PathfinderGPS instance
-PathfinderGPS pathfinder = (PathfinderGPS) Bukkit.getPluginManager().getPlugin("PathfinderGPS");
-
-// Start navigation for a player
-Player player = ...;
-pathfinder.getServer().dispatchCommand(Bukkit.getConsoleSender(), 
-    "pathgo spawn " + player.getName());
-```
-
-## 📖 Wiki
-
-For detailed guides, tutorials, and advanced usage, visit our [Wiki](https://github.com/GabiChigg/PathfinderGPS/wiki).
-
-## 🐛 Bug Reports
-
-Found a bug? Please report it on our [Issues](https://github.com/GabiChigg/PathfinderGPS/issues) page.
-
-## 💡 Feature Requests
-
-Have an idea? Open a [Feature Request](https://github.com/GabiChigg/PathfinderGPS/issues/new?labels=enhancement)!
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**GabiChigg**
-- GitHub: [@GabiChigg](https://github.com/GabiChigg)
-
-## 🌟 Support
-
-If you like PathfinderGPS, please ⭐ star this repository!
-
-## 📸 Screenshots
-
-### Waypoint Creation
-![Creating Waypoints](https://via.placeholder.com/600x400/1a1a1a/00ffff?text=Waypoint+Creation)
-
-### Navigation View
-![Navigation](https://via.placeholder.com/600x400/1a1a1a/ffff00?text=Navigation+View)
-
-### Route Preview
-![Route Preview](https://via.placeholder.com/600x400/1a1a1a/ff00ff?text=Route+Preview)
+Después de editar, usa `/path reload` para aplicar cambios.
 
 ---
 
-Made with ❤️ by GabiChigg
+## 🔐 Permisos
+
+| Permiso | Descripción | Default |
+|---------|-------------|---------|
+| `pathfinder.*` | Acceso completo | OP |
+| `pathfinder.use` | Navegar a destinos | Todos |
+| `pathfinder.list` | Ver lista de destinos | Todos |
+| `pathfinder.set` | Obtener herramienta GPS | OP |
+| `pathfinder.create` | Crear destinos y rutas | OP |
+| `pathfinder.delete` | Eliminar destinos | OP |
+| `pathfinder.admin` | Gestión y control de otros jugadores | OP |
+
+### Ejemplo con LuckPerms
+
+```bash
+# Dar permisos a jugadores
+/lp user Steve permission set pathfinder.use true
+
+# Dar permisos a grupos
+/lp group default permission set pathfinder.use true
+/lp group admin permission set pathfinder.* true
+```
+
+---
+
+## 🔗 Integración con Otros Plugins
+
+PathFinder soporta el placeholder `%player%` para integrarse con otros plugins:
+
+### DeluxeMenus
+```yaml
+spawn_button:
+  left_click_commands:
+    - '[console] path go Spawn follow %player%'
+```
+
+### Citizens (NPCs)
+```bash
+/npc command add path go Spawn follow %player%
+```
+
+### ChestCommands
+```yaml
+spawn-button:
+  COMMAND: 'console: path go Spawn follow %player%'
+```
+
+**Compatible con:** DeluxeMenus, Citizens, ChestCommands, CommandPanels, MyCommand, BossShopPro, y más.
+
+---
+
+## 🌐 Idiomas
+
+PathFinder incluye 5 idiomas:
+
+- 🇺🇸 English (`en`)
+- 🇪🇸 Español (`es`)
+- 🇧🇷 Português (`pt`)
+- 🇫🇷 Français (`fr`)
+- 🇮🇹 Italiano (`it`)
+
+### Cambiar Idioma
+
+```bash
+/path lang es              # Cambiar a español
+/path language en          # Cambiar a inglés
+```
+
+O edita `config.yml`:
+```yaml
+default_language: "es"
+```
+
+### Crear Idioma Personalizado
+
+1. Copia un archivo de `plugins/PathFinder/languages/`
+2. Renómbralo (ej: `custom.yml`)
+3. Edita los mensajes
+4. Usa `/path reload` y `/path lang custom`
+
+---
+
+## 📖 Documentación Completa
+
+Para guías detalladas, visita nuestra [**Wiki**](../../wiki):
+
+- [🚀 Instalación](../../wiki/Installation)
+- [📝 Comandos Básicos](../../wiki/Basic-Commands)
+- [🎯 Creación de Destinos](../../wiki/Creating-Destinations)
+- [🛤️ Creación de Rutas](../../wiki/Creating-Routes)
+- [🧭 Navegación](../../wiki/Navigation)
+- [⚙️ Configuración](../../wiki/Configuration)
+- [🌐 Idiomas](../../wiki/Languages)
+- [🔐 Permisos](../../wiki/Permissions)
+- [🔗 Integración](../../wiki/Integration)
+- [❓ FAQ](../../wiki/FAQ)
+
+---
+
+## 💡 Ejemplos de Uso
+
+### Servidor de Supervivencia
+```bash
+# Crear destinos principales
+/path set
+[Click] /path create Spawn
+[Click] /path create TiendaComunal
+[Click] /path create GranjaPublica
+
+# Crear ruta segura
+/path ways create Spawn
+[Marca waypoints]
+/path ways Spawn save ruta_principal
+```
+
+### Sistema de Tutorial con NPCs
+```bash
+# NPC Guía
+/npc create Guia
+/npc command add path go Spawn follow %player%
+```
+
+### Menú de Navegación
+```yaml
+# DeluxeMenus
+spawn:
+  material: COMPASS
+  left_click_commands:
+    - '[console] path go Spawn follow %player%'
+    - '[message] &a¡Navegación activada!'
+```
+
+---
+
+## 🎨 Personalización Visual
+
+### Cambiar Partículas
+```yaml
+particles:
+  navigation_line_particle: "FLAME"  # Efecto de fuego
+  # DUST, FLAME, HEART, VILLAGER_HAPPY, PORTAL, END_ROD, etc.
+```
+
+### Colores Personalizados (Solo DUST)
+```yaml
+colors:
+  distance_colors:
+    close: [255, 0, 0]        # Rojo brillante
+    medium: [255, 165, 0]     # Naranja
+    far: [0, 255, 0]          # Verde
+    very_far: [0, 100, 255]   # Azul
+```
+
+---
+
+## ❓ Preguntas Frecuentes
+
+### ¿Las rutas son necesarias?
+No, los destinos funcionan sin rutas. PathFinder generará una línea recta automáticamente.
+
+### ¿En qué dirección marco los waypoints?
+**De atrás hacia adelante**: Desde el inicio de la ruta hacia el destino.
+```
+[Inicio] → WP1 → WP2 → WP3 → [Destino]
+```
+
+### ¿Cuántos waypoints puedo usar?
+Por defecto 30, configurable en `config.yml` (recomendado máximo: 100).
+
+### ¿Funciona en múltiples mundos?
+Sí, pero solo puedes navegar a destinos del mismo mundo donde estás.
+
+### ¿Cómo detengo la navegación?
+La navegación se detiene automáticamente al llegar al destino, cambiar de mundo o desconectarse.
+
+---
+
+## 🤝 Contribuir
+
+¿Quieres contribuir? ¡Genial!
+
+- 🐛 **Reporta bugs** en [Issues](../../issues)
+- 💡 **Sugiere features** en [Issues](../../issues)
+- 🌐 **Comparte traducciones** personalizadas
+- ⭐ **Dale una estrella** al proyecto
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para más detalles.
+
+---
+
+## 📞 Soporte
+
+- 📖 **Wiki**: [Documentación Completa](../../wiki)
+- 🐛 **Issues**: [Reportar Problemas](../../issues)
+- 💬 **Discord**: [Servidor de Soporte](#) *(añade tu enlace)*
+
+---
+
+## 🙏 Agradecimientos
+
+Gracias a todos los que han contribuido y apoyado el desarrollo de PathFinder GPS.
+
+---
+
+<div align="center">
+
+**[⬆ Volver arriba](#-pathfinder-gps)**
+
+Hecho con ❤️ para la comunidad de Minecraft
+
+</div>
