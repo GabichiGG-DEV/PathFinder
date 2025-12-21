@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -108,6 +109,8 @@ public class PathCommand implements CommandExecutor, TabCompleter {
         sender.sendMessage(plugin.getLanguageManager().getMessage("path.help_stop"));
         sender.sendMessage(plugin.getLanguageManager().getMessage("path.help_list"));
         sender.sendMessage(plugin.getLanguageManager().getMessage("path.help_delete"));
+
+        sender.sendMessage("");
 
         if (sender.hasPermission("pathfinder.admin")) {
             sender.sendMessage("");

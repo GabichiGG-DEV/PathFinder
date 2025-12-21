@@ -219,6 +219,7 @@ public class LanguageManager {
         loadMessage("path.help_aliases", "&7Aliases: &e/pathfinder&7, &e/pf");
         loadMessage("path.help_footer", "&6&m                                        ");
 
+
         // Pathfinder main commands
         loadMessage("pathfinder.reload_success", "&a&l✓ &aConfiguration reloaded successfully!");
         loadMessage("pathfinder.reload_with_errors", "&e&l⚠ &eConfiguration reloaded with errors. Check console.");
